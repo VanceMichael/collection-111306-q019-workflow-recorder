@@ -6,5 +6,9 @@
   "reorder": {
     "reordered": true,
     "revision": 3
+  },
+  "duplicate-name": {
+    "duplicateName": true,
+    "revision": 4
   }
 }

@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-15T18:18:43.203Z",
+  "portalUrl": "http://127.0.0.1:36795",
+  "sourceTrace": {
+    "startedAt": "2026-11-15T18:18:42.732Z",
+    "stoppedAt": "2026-11-15T18:18:43.183Z",
+    "eventCount": 21
+  },
+  "structure": {
+    "initialGroups": [
+      "order",
+      "contact"
+    ],
+    "finalGroups": [
+      "order",
+      "contact"
+    ],
+    "reorderObserved": false
+  },
+  "steps": [
+    {
+      "id": "step-1",
+      "type": "input",
+      "source": "user",
+      "descriptor": {
+        "tag": "input",
+        "name": "order",
+        "labelText": "订单号",
+        "groupData": "order",
+        "group": "订单"
+      },
+      "recordedValue": "order-104",
+      "initialValue": "",
+      "keyedInEvents": 10,
+      "binding": {
+        "kind": "variable",
+        "variable": "orderNo",
+        "confirmed": true,
+        "basis": "订单号逐单不同，示范值仅为样本"
+      },
+      "uncertainty": [],
+      "intent": "在「订单 · 订单号」中录入业务数据（输入来源与绑定见草案，样本值「order-104」）"
+    },
+    {
+      "id": "step-2",
+      "type": "input",
+      "source": "user",
+      "descriptor": {
+        "tag": "input",
+        "type": "number",
+        "name": "quantity",
+        "labelText": "数量",
+        "groupData": "order",
+        "group": "订单"
+      },
+      "recordedValue": "3",
+      "initialValue": "1",
+      "keyedInEvents": 3,
+      "binding": {
+        "kind": "variable",
+        "variable": "quantity",
+        "confirmed": true,
+        "basis": "数量逐单不同"
+      },
+      "uncertainty": [],
+      "intent": "在「订单 · 数量」中录入业务数据（输入来源与绑定见草案，样本值「3」）"
+    },
+    {
+      "id": "step-3",
+      "type": "input",
+      "source": "user",
+      "descriptor": {
+        "tag": "input",
+        "name": "contact",
+        "labelText": "名称",
+        "groupData": "contact",
+        "group": "联系人"
+      },
+      "recordedValue": "王工",
+      "initialValue": "",
+      "keyedInEvents": 3,
+      "binding": {
+        "kind": "constant",
+        "confirmed": true,
+        "basis": "本车间固定对接人，核对门户历史后确认不变"
+      },
+      "uncertainty": [],
+      "intent": "在「联系人 · 名称」中录入业务数据（输入来源与绑定见草案，样本值「王工」）"
+    },
+    {
+      "id": "step-4",
+      "type": "derived-assert",
+      "source": "derived",
+      "descriptor": {
+        "tag": "output",
+        "id": "amount",
+        "groupData": "order",
+        "group": "订单"
+      },
+      "recordedValue": "30",
+      "initialValue": "10",
+      "rule": {
+        "infer": true,
+        "note": "由门户联动产生，录制器只观察到结果；具体规则需人工确认"
+      },
+      "intent": "核对联动值「订单 · amount」按门户规则变化（不主动录入）",
+      "uncertainty": []
+    },
+    {
+      "id": "step-5",
+      "type": "click",
+      "descriptor": {
+        "tag": "button",
+        "id": "review",
+        "type": "button",
+        "labelText": "核对"
+      },
+      "opensDialog": true,
+      "submitEvidence": null,
+      "requiresExplicitConfirmation": false,
+      "intent": "点击「核对」打开核对弹窗",
+      "uncertainty": []
+    },
+    {
+      "id": "step-6",
+      "type": "submit-boundary",
+      "descriptor": {
+        "tag": "button",
+        "id": "confirm",
+        "labelText": "确认提交"
+      },
+      "opensDialog": false,
+      "submitEvidence": {
+        "url": "/api/submit",
+        "method": "POST",
+        "fieldNames": [
+          "order",
+          "quantity",
+          "contact"
+        ]
+      },
+      "requiresExplicitConfirmation": true,
+      "intent": "对外提交：点击「确认提交」，回放时必须逐单人工确认",
+      "uncertainty": []
+    }
+  ],
+  "defaults": [],
+  "bindings": [
+    {
+      "stepId": "step-1",
+      "variable": "orderNo",
+      "sampleValue": "order-104",
+      "confirmed": true
+    },
+    {
+      "stepId": "step-2",
+      "variable": "quantity",
+      "sampleValue": "3",
+      "confirmed": true
+    }
+  ],
+  "uncertainties": [],
+  "confirmation": {
+    "reviewer": "李业务",
+    "confirmedAt": "2026-11-15T18:18:43.207Z",
+    "contentHash": "da95f01afc2239adc69956567bba4dd0ce508f4dbab8e96462811643c2bebcd3",
+    "note": "输入来源与绑定已逐条核对，同意按此流程重复录入"
+  },
+  "contentHash": "da95f01afc2239adc69956567bba4dd0ce508f4dbab8e96462811643c2bebcd3"
+}

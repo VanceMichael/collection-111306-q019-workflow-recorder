@@ -1,0 +1,446 @@
+{
+  "draftHash": "62c77475c938c85cb740b2cb007975135852913b4580e93729e32e47f1c2c71b",
+  "confirmation": {
+    "reviewer": "李业务",
+    "confirmedAt": "2026-11-15T18:18:44.276Z",
+    "contentHash": "62c77475c938c85cb740b2cb007975135852913b4580e93729e32e47f1c2c71b",
+    "note": "联系人定位人工纠正后重新确认"
+  },
+  "reports": [
+    {
+      "rowId": "row-201",
+      "receipt": {
+        "order": "order-201",
+        "quantity": "5",
+        "contact": "王工",
+        "receipt": "834d8c24-541e-4d06-bb56-7bffacecae29"
+      },
+      "pauses": 1,
+      "audit": [
+        {
+          "at": "2026-11-15T18:18:43.414Z",
+          "event": "input-replayed",
+          "stepId": "step-1",
+          "selector": "fieldset[data-group=\"order\"] [name=\"order\"]",
+          "binding": "variable",
+          "variable": "orderNo"
+        },
+        {
+          "at": "2026-11-15T18:18:43.472Z",
+          "event": "input-replayed",
+          "stepId": "step-2",
+          "selector": "fieldset[data-group=\"order\"] [name=\"quantity\"]",
+          "binding": "variable",
+          "variable": "quantity"
+        },
+        {
+          "at": "2026-11-15T18:18:43.535Z",
+          "event": "input-replayed",
+          "stepId": "step-3",
+          "selector": "fieldset[data-group=\"contact\"] [name=\"contact\"]",
+          "binding": "constant",
+          "variable": null
+        },
+        {
+          "at": "2026-11-15T18:18:43.538Z",
+          "event": "derived-checked",
+          "stepId": "step-4",
+          "selector": "#amount",
+          "recordedValue": "30",
+          "liveValue": "50",
+          "ruleNote": "由门户联动产生，录制器只观察到结果；具体规则需人工确认"
+        },
+        {
+          "at": "2026-11-15T18:18:43.570Z",
+          "event": "click-replayed",
+          "stepId": "step-5",
+          "selector": "#review",
+          "opensDialog": true
+        },
+        {
+          "at": "2026-11-15T18:18:43.570Z",
+          "event": "paused",
+          "reason": "到达对外提交边界，需要逐单显式确认",
+          "stepId": "step-6",
+          "stepType": "submit-boundary",
+          "intent": "对外提交：点击「确认提交」，回放时必须逐单人工确认",
+          "recordedDescriptor": {
+            "tag": "button",
+            "id": "confirm",
+            "labelText": "确认提交"
+          },
+          "attemptedDescriptor": {
+            "tag": "button",
+            "id": "confirm",
+            "labelText": "确认提交"
+          },
+          "rowId": "row-201",
+          "previewVariables": {
+            "rowId": "row-201",
+            "orderNo": "order-201",
+            "quantity": "5",
+            "contact": "王工"
+          },
+          "submitEvidence": {
+            "url": "/api/submit",
+            "method": "POST",
+            "fieldNames": [
+              "order",
+              "quantity",
+              "contact"
+            ]
+          }
+        },
+        {
+          "at": "2026-11-15T18:18:43.781Z",
+          "event": "input-replayed",
+          "stepId": "step-1",
+          "selector": "fieldset[data-group=\"order\"] [name=\"order\"]",
+          "binding": "variable",
+          "variable": "orderNo"
+        },
+        {
+          "at": "2026-11-15T18:18:43.838Z",
+          "event": "input-replayed",
+          "stepId": "step-2",
+          "selector": "fieldset[data-group=\"order\"] [name=\"quantity\"]",
+          "binding": "variable",
+          "variable": "quantity"
+        },
+        {
+          "at": "2026-11-15T18:18:43.903Z",
+          "event": "input-replayed",
+          "stepId": "step-3",
+          "selector": "fieldset[data-group=\"contact\"] [name=\"contact\"]",
+          "binding": "constant",
+          "variable": null
+        },
+        {
+          "at": "2026-11-15T18:18:43.906Z",
+          "event": "derived-checked",
+          "stepId": "step-4",
+          "selector": "#amount",
+          "recordedValue": "30",
+          "liveValue": "50",
+          "ruleNote": "由门户联动产生，录制器只观察到结果；具体规则需人工确认"
+        },
+        {
+          "at": "2026-11-15T18:18:43.935Z",
+          "event": "click-replayed",
+          "stepId": "step-5",
+          "selector": "#review",
+          "opensDialog": true
+        },
+        {
+          "at": "2026-11-15T18:18:43.968Z",
+          "event": "submitted",
+          "stepId": "step-6",
+          "selector": "#confirm",
+          "rowId": "row-201",
+          "confirmedBy": "赵值班"
+        },
+        {
+          "at": "2026-11-15T18:18:44.005Z",
+          "event": "no-self-recording-verified",
+          "recordedEvents": 0
+        }
+      ]
+    },
+    {
+      "rowId": "row-307",
+      "receipt": {
+        "contact": "王工",
+        "order": "order-307",
+        "quantity": "8",
+        "receipt": "2c73c013-cd0a-4ef7-8b55-b76baafb3f1d"
+      },
+      "pauses": 2,
+      "audit": [
+        {
+          "at": "2026-11-15T18:18:44.031Z",
+          "event": "structure-drift",
+          "recordedGroups": [
+            "order",
+            "contact"
+          ],
+          "liveGroups": [
+            "contact",
+            "order",
+            "contact"
+          ],
+          "note": "页面分组结构与录制时不同；继续按语义定位，若控件因此含糊将另行暂停"
+        },
+        {
+          "at": "2026-11-15T18:18:44.214Z",
+          "event": "input-replayed",
+          "stepId": "step-1",
+          "selector": "fieldset[data-group=\"order\"] [name=\"order\"]",
+          "binding": "variable",
+          "variable": "orderNo"
+        },
+        {
+          "at": "2026-11-15T18:18:44.272Z",
+          "event": "input-replayed",
+          "stepId": "step-2",
+          "selector": "fieldset[data-group=\"order\"] [name=\"quantity\"]",
+          "binding": "variable",
+          "variable": "quantity"
+        },
+        {
+          "at": "2026-11-15T18:18:44.273Z",
+          "event": "paused",
+          "reason": "定位歧义：多个控件同时匹配，禁止猜测",
+          "stepId": "step-3",
+          "stepType": "input",
+          "intent": "在「联系人 · 名称」中录入业务数据（输入来源与绑定见草案，样本值「王工」）",
+          "recordedDescriptor": {
+            "tag": "input",
+            "name": "contact",
+            "labelText": "名称",
+            "groupData": "contact",
+            "group": "联系人"
+          },
+          "attemptedDescriptor": {
+            "tag": "input",
+            "name": "contact",
+            "labelText": "名称",
+            "groupData": "contact",
+            "group": "联系人"
+          },
+          "resolution": {
+            "status": "ambiguous",
+            "count": 2,
+            "matches": [
+              {
+                "selector": "fieldset:nth-of-type(1) [name=\"contact\"]",
+                "descriptor": {
+                  "tag": "input",
+                  "name": "contact",
+                  "labelText": "名称",
+                  "groupData": "contact",
+                  "group": "联系人（备用）"
+                }
+              },
+              {
+                "selector": "fieldset:nth-of-type(3) [name=\"contact\"]",
+                "descriptor": {
+                  "tag": "input",
+                  "name": "contact",
+                  "labelText": "名称",
+                  "groupData": "contact",
+                  "group": "联系人"
+                }
+              }
+            ],
+            "scoped": true
+          },
+          "candidates": [
+            {
+              "selector": "fieldset:nth-of-type(1) [name=\"contact\"]",
+              "descriptor": {
+                "tag": "input",
+                "name": "contact",
+                "labelText": "名称",
+                "groupData": "contact",
+                "group": "联系人（备用）"
+              }
+            },
+            {
+              "selector": "fieldset:nth-of-type(3) [name=\"contact\"]",
+              "descriptor": {
+                "tag": "input",
+                "name": "contact",
+                "labelText": "名称",
+                "groupData": "contact",
+                "group": "联系人"
+              }
+            }
+          ]
+        },
+        {
+          "at": "2026-11-15T18:18:44.275Z",
+          "event": "correction-applied",
+          "stepId": "step-3",
+          "correctedDescriptor": {
+            "tag": "input",
+            "name": "contact",
+            "labelText": "名称",
+            "groupData": "contact",
+            "group": "联系人",
+            "occurrence": 1
+          },
+          "note": "同分组同名 contact 二义，人工书面指定第 2 个候选（主联系人，非前置备用块）"
+        },
+        {
+          "at": "2026-11-15T18:18:44.297Z",
+          "event": "structure-drift",
+          "recordedGroups": [
+            "order",
+            "contact"
+          ],
+          "liveGroups": [
+            "contact",
+            "order",
+            "contact"
+          ],
+          "note": "页面分组结构与录制时不同；继续按语义定位，若控件因此含糊将另行暂停"
+        },
+        {
+          "at": "2026-11-15T18:18:44.480Z",
+          "event": "input-replayed",
+          "stepId": "step-1",
+          "selector": "fieldset[data-group=\"order\"] [name=\"order\"]",
+          "binding": "variable",
+          "variable": "orderNo"
+        },
+        {
+          "at": "2026-11-15T18:18:44.522Z",
+          "event": "input-replayed",
+          "stepId": "step-2",
+          "selector": "fieldset[data-group=\"order\"] [name=\"quantity\"]",
+          "binding": "variable",
+          "variable": "quantity"
+        },
+        {
+          "at": "2026-11-15T18:18:44.586Z",
+          "event": "input-replayed",
+          "stepId": "step-3",
+          "selector": "fieldset:nth-of-type(3) [name=\"contact\"]",
+          "binding": "constant",
+          "variable": null
+        },
+        {
+          "at": "2026-11-15T18:18:44.588Z",
+          "event": "derived-checked",
+          "stepId": "step-4",
+          "selector": "#amount",
+          "recordedValue": "30",
+          "liveValue": "80",
+          "ruleNote": "由门户联动产生，录制器只观察到结果；具体规则需人工确认"
+        },
+        {
+          "at": "2026-11-15T18:18:44.619Z",
+          "event": "click-replayed",
+          "stepId": "step-5",
+          "selector": "#review",
+          "opensDialog": true
+        },
+        {
+          "at": "2026-11-15T18:18:44.619Z",
+          "event": "paused",
+          "reason": "到达对外提交边界，需要逐单显式确认",
+          "stepId": "step-6",
+          "stepType": "submit-boundary",
+          "intent": "对外提交：点击「确认提交」，回放时必须逐单人工确认",
+          "recordedDescriptor": {
+            "tag": "button",
+            "id": "confirm",
+            "labelText": "确认提交"
+          },
+          "attemptedDescriptor": {
+            "tag": "button",
+            "id": "confirm",
+            "labelText": "确认提交"
+          },
+          "rowId": "row-307",
+          "previewVariables": {
+            "rowId": "row-307",
+            "orderNo": "order-307",
+            "quantity": "8",
+            "contact": "王工"
+          },
+          "submitEvidence": {
+            "url": "/api/submit",
+            "method": "POST",
+            "fieldNames": [
+              "order",
+              "quantity",
+              "contact"
+            ]
+          }
+        },
+        {
+          "at": "2026-11-15T18:18:44.640Z",
+          "event": "structure-drift",
+          "recordedGroups": [
+            "order",
+            "contact"
+          ],
+          "liveGroups": [
+            "contact",
+            "order",
+            "contact"
+          ],
+          "note": "页面分组结构与录制时不同；继续按语义定位，若控件因此含糊将另行暂停"
+        },
+        {
+          "at": "2026-11-15T18:18:44.830Z",
+          "event": "input-replayed",
+          "stepId": "step-1",
+          "selector": "fieldset[data-group=\"order\"] [name=\"order\"]",
+          "binding": "variable",
+          "variable": "orderNo"
+        },
+        {
+          "at": "2026-11-15T18:18:44.888Z",
+          "event": "input-replayed",
+          "stepId": "step-2",
+          "selector": "fieldset[data-group=\"order\"] [name=\"quantity\"]",
+          "binding": "variable",
+          "variable": "quantity"
+        },
+        {
+          "at": "2026-11-15T18:18:44.953Z",
+          "event": "input-replayed",
+          "stepId": "step-3",
+          "selector": "fieldset:nth-of-type(3) [name=\"contact\"]",
+          "binding": "constant",
+          "variable": null
+        },
+        {
+          "at": "2026-11-15T18:18:44.955Z",
+          "event": "derived-checked",
+          "stepId": "step-4",
+          "selector": "#amount",
+          "recordedValue": "30",
+          "liveValue": "80",
+          "ruleNote": "由门户联动产生，录制器只观察到结果；具体规则需人工确认"
+        },
+        {
+          "at": "2026-11-15T18:18:44.986Z",
+          "event": "click-replayed",
+          "stepId": "step-5",
+          "selector": "#review",
+          "opensDialog": true
+        },
+        {
+          "at": "2026-11-15T18:18:45.018Z",
+          "event": "submitted",
+          "stepId": "step-6",
+          "selector": "#confirm",
+          "rowId": "row-307",
+          "confirmedBy": "赵值班"
+        },
+        {
+          "at": "2026-11-15T18:18:45.054Z",
+          "event": "no-self-recording-verified",
+          "recordedEvents": 0
+        }
+      ]
+    }
+  ],
+  "savedOrders": [
+    {
+      "order": "order-201",
+      "quantity": "5",
+      "contact": "王工",
+      "receipt": "834d8c24-541e-4d06-bb56-7bffacecae29"
+    },
+    {
+      "contact": "王工",
+      "order": "order-307",
+      "quantity": "8",
+      "receipt": "2c73c013-cd0a-4ef7-8b55-b76baafb3f1d"
+    }
+  ]
+}

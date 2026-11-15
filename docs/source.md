@@ -1,10 +1,10 @@
 # 本地资料源约定
 
-正常界面包含主动输入、默认值和派生金额。#review 打开核对弹窗，#confirm 才通过 /api/submit 形成提交；模拟源不提供录制器。ambiguous 增加另一组同名标签，reorder 改布局。业务录制必须来自真实浏览器事件，不能直接把源控件配置当成录制结果。
+正常界面包含主动输入、默认值和派生金额。#review 打开核对弹窗，#confirm 才通过 /api/submit 形成提交；模拟源不提供录制器。ambiguous 增加另一组同名标签，reorder 改布局。duplicate-name 在同一 data-group=contact 分组标识下再插入一个 name=contact 的控件（与主联系人同名同分组，模拟门户改版后的真正定位歧义），用于验证回放器必须暂停交人工裁决而不是猜测。业务录制必须来自真实浏览器事件，不能直接把源控件配置当成录制结果。
 
 ## 通用控制
 
-`GET /api/snapshot` 查看当前原始源状态；`POST /api/action` 接收 JSON 对象 `{"action":"动作名"}`。可用动作：reset、ambiguous、reorder。控制只改变模拟源，不代表接收器已经处理了变化。
+`GET /api/snapshot` 查看当前原始源状态；`POST /api/action` 接收 JSON 对象 `{"action":"动作名"}`。可用动作：reset、ambiguous、reorder、duplicate-name。控制只改变模拟源，不代表接收器已经处理了变化。
 
 所有资料均由本项目构造，包含的机构、设备、会话和文件仅供本地使用，不访问真实账号。浏览器操作应通过正常可见界面；测试用源控制接口不是业务采集捷径。
 

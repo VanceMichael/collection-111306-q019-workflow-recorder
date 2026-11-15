@@ -1,0 +1,7 @@
+{
+  "description": "两条待回放业务数据。orderNo/quantity 由草案中的变量绑定消费；contact 经人工裁决为固定值，不在此处逐单变化。",
+  "rows": [
+    { "rowId": "row-201", "orderNo": "order-201", "quantity": "5", "contact": "王工" },
+    { "rowId": "row-307", "orderNo": "order-307", "quantity": "8", "contact": "王工" }
+  ]
+}
